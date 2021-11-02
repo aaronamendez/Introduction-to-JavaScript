@@ -21,7 +21,9 @@ Do the following:
 */
 let votingAge = 18;
 if (votingAge >= 18) {
-	console.log("You can vote!");
+	console.log(true);
+} else {
+	console.log(false);
 }
 
 /*
@@ -34,13 +36,12 @@ Do the following:
 
    HINT: no function required
 */
-// let money = 20;
-// let product = 10;
-
-// if (money >= product) {
-// 	money -= product;
-// 	return console.log(money);
-// }
+let crypto = "Bitcoin";
+let bestCrypto = "Much Wow";
+if (bestCrypto === "Much Wow") {
+	crypto = "Dogecoin";
+}
+console.log(crypto);
 /*
 Task 1c - Convert Strings to Numbers
 
@@ -51,7 +52,7 @@ Do the following:
 
    HINT: look up the Number method
 */
-var myString = "1999";
+let myString = "1999";
 
 const converter = (string) => {
 	Number(string);
@@ -86,7 +87,7 @@ function dogYears(age) {
 	/*add your code here*/
 	return age * 7;
 }
-dogYears(12);
+console.log(dogYears(12));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -141,7 +142,7 @@ function hungryDog(pounds, years) {
 		}
 	}
 }
-console.log(hungryDog(15, 5));
+console.log(hungryDog(15, 1));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -163,10 +164,52 @@ RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors
 
 HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
+// Global Variable
+const computerChoice = () => {
+	let randomNumber = Math.floor(Math.random() * 3);
+	switch (randomNumber) {
+		case 0:
+			return "rock";
+		case 1:
+			return "paper";
+		case 2:
+			return "scissors";
+	}
+};
 
 function game(user, computer) {
 	/*add your code here*/
+	// If Tie
+	if (user === computer) {
+		return "it's a tie";
+	}
+	// If Rock
+	if (user === "rock") {
+		if (computer === "scissors") {
+			return "you win!";
+		} else {
+			return "you lose!";
+		}
+	}
+	// If Paper
+	if (user === "paper") {
+		if (computer === "rock") {
+			return "you win!";
+		} else {
+			return "you lose!";
+		}
+	}
+	// If Scissors
+	if (user === "scissors") {
+		if (computer === "paper") {
+			return "you win!";
+		} else {
+			return "you lose!";
+		}
+	}
 }
+// Testing
+console.log(game("paper", computerChoice()));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -179,9 +222,11 @@ Using the miles function below do the following:
 3. Return the number of miles
 */
 
-function miles(/*add your code here*/) {
+function miles(kilo) {
 	/*add your code here*/
+	return (kilo *= 0.62);
 }
+console.log(miles(5));
 
 //Task 5b - Feet to CM
 /*
